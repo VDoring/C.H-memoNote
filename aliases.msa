@@ -1,0 +1,22 @@
+﻿/memo [$1] =>>>
+	if($1 == '') {
+	msg('사용법: /memo \'입력할내용\'')
+	}
+	if($1 !== '') {
+	store_value(player() . 'data', $1)
+	msg('메모가 저장되었습니다!')
+	}
+<<<
+/readmemo =>>>
+	@txt = get_value(player() . 'data')
+	if(@txt == '' || @txt == null) {
+		msg('출력할 내용이 없습니다..')
+	}
+	else {
+		msg("", @txt)
+	}
+<<<
+/delmemo =>>>
+	clear_value(player() . 'data')
+	msg('메모가 초기화되었습니다!')
+<<<
